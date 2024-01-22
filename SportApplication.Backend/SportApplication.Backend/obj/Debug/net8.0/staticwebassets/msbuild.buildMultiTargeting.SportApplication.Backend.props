@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SportApplication.Backend.props" />
+</Project>

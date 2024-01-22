@@ -1,0 +1,8 @@
+body {
+  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+}
+
+* {
+  transition: background-color 200ms, color 100ms;
+  transition-timing-function: cubic-bezier(0.53, 0.26, 0.83, 0.55);
+}

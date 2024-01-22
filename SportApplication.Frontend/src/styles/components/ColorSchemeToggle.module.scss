@@ -1,0 +1,9 @@
+.icon {
+  &.dark {
+    display: light-dark(block, none);
+  }
+
+  &.light {
+    display: light-dark(none, block);
+  }
+}

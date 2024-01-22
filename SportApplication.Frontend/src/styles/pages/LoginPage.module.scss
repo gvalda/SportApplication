@@ -1,0 +1,89 @@
+@property --x {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 100%;
+}
+@property --y {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 100%;
+}
+
+.wrapper {
+  position: relative;
+  height: 100vh;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(
+        ellipse at var(--x) var(--y),
+        light-dark(var(--mantine-color-indigo-1), var(--mantine-primary-color-filled)) 0%,
+        transparent 100%
+      ),
+      radial-gradient(
+        ellipse at var(--y) var(--x),
+        light-dark(var(--mantine-color-grape-0), var(--mantine-color-grape-8)) 0%,
+        transparent 100%
+      );
+    animation: circlePosition 30s infinite alternate;
+  }
+}
+
+.form {
+  background-color: light-dark(#ffffffcc, #242424cc);
+  height: 100%;
+  max-width: 100%;
+  overflow-y: auto;
+  transition: max-width 200ms;
+
+  :global(.mantine-Input-input) {
+    background-color: transparent;
+  }
+
+  @include larger-than($mantine-breakpoint-md) {
+    max-width: 500px;
+  }
+}
+
+.divider {
+  user-select: none;
+}
+
+.anchor {
+  user-select: none;
+  cursor: pointer;
+
+  @include hover {
+    text-decoration: underline;
+  }
+}
+
+@keyframes circlePosition {
+  0% {
+    --x: 26%;
+    --y: 12%;
+  }
+
+  25% {
+    --x: 74%;
+    --y: 28%;
+  }
+
+  50% {
+    --x: 45%;
+    --y: 88%;
+  }
+
+  75% {
+    --x: 12%;
+    --y: 62%;
+  }
+
+  100% {
+    --x: 26%;
+    --y: 12%;
+  }
+}

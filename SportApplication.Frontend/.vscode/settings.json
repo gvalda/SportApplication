@@ -1,0 +1,9 @@
+{
+  "files.exclude": {
+    "**/node_modules": true
+  },
+  "cssModules.pathAlias": {
+    "@styles": "${workspaceFolder}/src/styles"
+  },
+  "cSpell.words": ["Dockview"]
+}
